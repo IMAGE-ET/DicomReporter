@@ -84,7 +84,7 @@ public class DicomReporter
    
    
    private PatientRoot scanPath(String path)
-	{
+   {
       logger.info("DICOM search: " + path);
 		
       DicomReceiver         dcmRec   = new DicomReceiver();
