@@ -62,7 +62,7 @@ public class DicomReporter
    private static final Logger logger =
 		LoggerFactory.getLogger(DicomReporter.class);
 
-	private final DicomToolkit dcmTk = DicomToolkit.getDefaultToolkit();
+   private final DicomToolkit dcmTk = DicomToolkit.getDefaultToolkit();
    
    private final String SCAN_PATH_ROOT = "/Users/simond/data/Treviso_sample";
  
@@ -85,9 +85,9 @@ public class DicomReporter
    
    private PatientRoot scanPath(String path)
 	{
-		logger.info("DICOM search: " + path);
+      logger.info("DICOM search: " + path);
 		
-		DicomReceiver         dcmRec   = new DicomReceiver();
+      DicomReceiver         dcmRec   = new DicomReceiver();
 		PathScan<DicomObject> pathScan = dcmTk.createPathScan();
 		
 		pathScan.addContext(dcmRec);
