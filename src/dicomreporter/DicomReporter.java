@@ -88,21 +88,21 @@ public class DicomReporter
       logger.info("DICOM search: " + path);
 		
       DicomReceiver         dcmRec   = new DicomReceiver();
-		PathScan<DicomObject> pathScan = dcmTk.createPathScan();
+      PathScan<DicomObject> pathScan = dcmTk.createPathScan();
 		
-		pathScan.addContext(dcmRec);
-		PatientRoot root = null;
-		try
-		{
-			pathScan.scan(path, true);
-			root = dcmRec.getPatientRoot();
-		}
-		catch (IOException ex)
-		{
-			logger.warn(ex.getMessage(), ex);
-		}
-		return root;
-	}
+      pathScan.addContext(dcmRec);
+      PatientRoot root = null;
+      try
+      {
+         pathScan.scan(path, true);
+         root = dcmRec.getPatientRoot();
+      }
+      catch (IOException ex)
+      {
+         logger.warn(ex.getMessage(), ex);
+      }
+      return root;
+   }
    
    private String createReport(PatientRoot pRoot)
    {
